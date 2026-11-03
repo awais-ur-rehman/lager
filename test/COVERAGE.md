@@ -38,6 +38,11 @@ changes. The others run on a schedule, through `workflow_call`, on a tag push, o
 `nightly-bench.yml` reaches the other two bench workflows above it through `workflow_call`, so
 neither of those carries a `schedule` or `push` trigger of its own.
 
+**None of the bench rows run today.** The bench box (MASTER) was retired on 2026-11-02 and the
+five bench workflows are disabled, so every hardware count below that says a script runs
+"nightly" or "weekly" describes what ran up to that date. Until a new bench exists, those
+scripts are syntax-checked and shellchecked like the rest, and executed nowhere.
+
 A job only *blocks* a merge once its status context is listed in branch ruleset 14535039.
 Sixteen contexts are: the six `unit (...)` jobs, `static-checks`, the four `compat (...)` jobs,
 `packaging`, `mcp-extra`, `rust (oscilloscope-daemon)`, and the two `xplat (...)` jobs. The
